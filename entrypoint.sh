@@ -36,6 +36,8 @@ if ! APTIBLE_OUTPUT_FORMAT=json aptible apps | jq -e ".[] | select(.handle == \"
 fi
 
 set -x
+echo "Running aptible deploy with configured variables..."
+set +x
 
 ARGS_ARRAY=()
 if [ -n "${INPUT_CONFIG_VARIABLES_JSON}" ]; then
